@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="logo.png" alt=""></a>
+        <div class="toggleMenu" onclick="menuToggle();"></div>
+       <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Contact</a></li>
+       </ul>
+    </header>
+    <section class="banner">
+        <div class="imgBx">
+            <img src="img2.jpg" class="active">
+            <img src="shoe1.jpg" alt="">
+            <img src="shoe2.jpg" alt="">
+            <img src="shoe3.jpg" alt="">
+            <img src="shoe4.jpg" alt="">
+            <img src="shoe5.jpg" alt="">
+        </div>
+
+        <div class="contentBx">
+            <div class="active">
+                <h2>Air Jordan 1 Mid SE</h2>
+                <p>These AJ1s serve a classic silhouette and vintage-inspired colors, making them a must-have for any sneakerhead. Rich grain leather and woven fabrics will elevate any streetwear 'fit, while a buttery soft interior adds comfort.</p>
+                <a href="https://www.nike.com/t/air-jordan-1-mid-se-big-kids-shoes-wCk1C4/DJ0338-100">BUY AT NIKE│$110</a>
+            </div>
+            <div>
+                <h2>Nike Air Max 97 sneaker</h2>
+                <p>Low-top paneled mesh and faux-leather sneakers in tones of grey featuring tonal rubberized trim throughout.</p>
+                <a href="https://www.nike.com/t/air-max-97-se-mens-shoes-6xRN2b/DH4759-001">BUY AT NIKE│$185</a>
+            </div>
+            <div>
+                <h2>Chuck Taylor All Star Classic</h2>
+                <p>We could tell you that it’s the OG basketball shoe, created over 100 years ago. Or that the design has largely stayed the same, because why mess with a good thing. Or how it became the unofficial sneaker of all your favorite artists and musicians, who each made it their own. Yeah, we could share a lot of stories, but the one that matters most isn’t ours—it’s yours. It’s how and where you take your Chucks. The legacy is long, but what comes next is up to you. We just make the shoe. You make the stories.</p>
+                <a href="https://www.converse.com/uk/en/shop/p/chuck-taylor-all-star-classic-unisex-high-top-shoe/M9006MP.html?cgid=Catalog_All_HighTops">BUY AT CONVERSE│£80</a>
+            </div>
+            <div>
+                <h2>Air Jordan 1 High</h2>
+                <p>Always in, always fresh. The Air Jordan 1 Low sets you up with a piece of Jordan history and heritage that's comfortable all day. Choose your colors, then step out in the iconic profile that's built with a high-end mix of materials and encapsulated Air in the heel.</p>
+                <a href="https://www.nike.com/t/air-jordan-1-low-womens-shoe-PjBpsK/DC0774-050">BUY AT NIKE│$130</a>
+            </div>
+            <div>
+                <h2>Nike Zoom Fly 4</h2>
+                <p>Train hard and find your rhythm on the road. From the moment you lace up, the lacing system wraps around your foot for a secure feel from start to finish. The added flex feels highly responsive and secure with every step. A soft, breathable upper combines with a stretchy collar for a sock-like fit for a secure, stable sensation. You've got goals to hit, lace up and fly towards a new best.</p>
+                <a href="https://www.nike.com/t/zoom-fly-4-mens-road-running-shoes-dw6jzQ/CT2392-700">BUY AT NIKE│$160</a>
+            </div>
+            <div>
+                <h2>Nike Air Max 95</h2>
+                <p>This low-top pair comes in a range of colors, shown here in classic black. These sporty sneakers take inspiration from the ’90 classic track aesthetics. Nike’s signature lightweight rubber sole makes it also one of the most comfortable sneakers to wear all day long.</p>
+                <a href="https://www.nike.com/w/mens-air-max-95-shoes-b0mibznik1zy7ok?CP=EUNS_AFF_AWIN_UK_654213_LuxeDigital_169839&utm_source=LuxeDigital&utm_medium=affiliate&utm_campaign=654213&utm_content=169839&awc=16327_1646951466_f80163a3ebc96d73bb47eaa09eebd9b3">BUY AT NIKE│$175</a>
+            </div>
+        </div>
+
+        <ul class="controls">
+            <li onclick="prevImg(); prevImgText()"></li>
+            <li onclick="nextImg (); nextImgText()"></li>
+        </ul>
+    </section>
+    <script>
+        const imgBx = document.querySelector('.imgBx');
+        const slides = imgBx.getElementsByTagName('img');
+        var i = 0;
+        //because if i use const it wont change to the next img.
+
+        function nextImg() {
+            slides[i].classList.remove('active');
+            i = (i + 1) % slides.length;
+            slides[i].classList.add('active');
+        }
+
+        function prevImg() {
+            slides[i].classList.remove('active');
+            i = (i - 1 + slides.length) % slides.length;
+            slides[i].classList.add('active');
+        }
+
+        function menuToggle() {
+            const toggleMenu = document.querySelector('.toggleMenu')
+            const navigation = document.querySelector('.navigation')
+            toggleMenu.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+
+
+
+
+
+
+
+
+
+
+        const contentBx = document.querySelector('.contentBx');
+        const slidesText = contentBx.getElementsByTagName('div');
+        var j = 0;
+        //because if i use const it wont change to the next img.
+
+        function nextImgText() {
+            slidesText[j].classList.remove('active');
+            j = (j + 1) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+        function prevImgText() {
+            slidesText[j].classList.remove('active');
+            j = (j - 1 + slidesText.length) % slidesText.length;
+            slidesText[j].classList.add('active');
+        }
+    </script>
+</body>
+</html>
